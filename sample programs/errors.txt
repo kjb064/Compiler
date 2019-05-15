@@ -1,0 +1,38 @@
+CLASS  {
+    /* No class identifier */
+
+    /* Left off value for B */
+    CONST A = 5, B = ;
+    VAR C, D, E;
+
+    /* Left out variable after comma */
+    VAR H, ;
+   
+    /* Illegally assigning constant with a variable */
+    CONST F = E;
+
+    C = A + 7;
+    
+    /* Left off semicolon below */
+    D = C    
+    E = 9;
+    D *= E;
+
+    /* No variable provided for input */
+    READ ;
+
+    /* Relop cannot follow assignment */
+    C = A != 1;
+    
+    /* Illegal ODD in statement */	
+    READ ODD;
+
+    C = 5 + D;
+    
+    /* Left out operand */
+    E =  * 9;
+    
+    /* Started statement with addop */
+    A + B;
+
+    /* Left off closing brace */

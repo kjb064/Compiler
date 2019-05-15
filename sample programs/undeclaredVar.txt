@@ -1,0 +1,8 @@
+CLASS UndeclaredVar {
+    VAR A, B, C;
+    A = 5;
+    B = 7;
+
+    /* Attempting to use undeclared var D */
+    D = A + B;
+}

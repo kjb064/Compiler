@@ -1,0 +1,37 @@
+CLASS BOption {
+
+/* 5. Compute N! for M iterations using nested while loop. */
+
+    VAR N, fact, M, count;
+
+    count = 0;
+    fact = 1;
+    READ M;
+
+    WHILE count < M DO {
+
+        READ N;
+
+        WHILE N > 1 DO {
+            fact = fact * N;
+            N = N - 1;
+        } 
+
+        WRITE fact;
+        fact = 1;
+        count += 1;
+    }
+ 
+/* 6. Calculate N! using a function. */
+
+    PROCEDURE factorial(){
+        WHILE N > 1 DO {
+            fact = fact * N;
+            N = N - 1;
+        } 
+    }
+
+    READ N;
+    CALL factorial();
+    WRITE fact;
+}

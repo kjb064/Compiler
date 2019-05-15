@@ -1,0 +1,18 @@
+CLASS AOptionPgm7 {
+    /* Compute N! using a recursive function. */
+    VAR N, Nfact;
+    
+    PROCEDURE RecursiveFactorial(){
+        IF N != 1 THEN {
+	    Nfact = Nfact * N;
+            N = N - 1;
+            CALL RecursiveFactorial();
+        }   
+    }
+
+    READ N;
+    Nfact = 1;
+    CALL RecursiveFactorial();
+    WRITE Nfact; 
+    
+}

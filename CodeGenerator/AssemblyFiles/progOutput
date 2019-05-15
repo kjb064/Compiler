@@ -1,0 +1,49 @@
+kevin@kevin-VirtualBox:/media/sf_Compiler/CodeGenerator/AssemblyFiles$ nasm -f elf COption.asm
+kevin@kevin-VirtualBox:/media/sf_Compiler/CodeGenerator/AssemblyFiles$ gcc -o COption COption.o
+kevin@kevin-VirtualBox:/media/sf_Compiler/CodeGenerator/AssemblyFiles$ ./COption
+Enter an integer(less than 32,765): 5
+Enter an integer(less than 32,765): 2
+Enter an integer(less than 32,765): 1
+Enter an integer(less than 32,765): 10
+Enter an integer(less than 32,765): 6
+Ans = 00020
+Enter an integer(less than 32,765): 8
+Enter an integer(less than 32,765): 100
+Ans = 00100
+Enter an integer(less than 32,765): 10
+Enter an integer(less than 32,765): 45
+Enter an integer(less than 32,765): 90
+Ans = 00090
+Enter an integer(less than 32,765): 5
+Ans = 00120
+
+
+
+kevin@kevin-VirtualBox:/media/sf_Compiler/CodeGenerator/AssemblyFiles$ nasm -f elf AOption.asm
+kevin@kevin-VirtualBox:/media/sf_Compiler/CodeGenerator/AssemblyFiles$ gcc -o AOption AOption.o
+kevin@kevin-VirtualBox:/media/sf_Compiler/CodeGenerator/AssemblyFiles$ ./AOption
+Enter an integer(less than 32,765): 7
+Ans = 05040
+
+
+kevin@kevin-VirtualBox:/media/sf_Compiler/CodeGenerator/AssemblyFiles$ nasm -f elf BOption.asm
+kevin@kevin-VirtualBox:/media/sf_Compiler/CodeGenerator/AssemblyFiles$ gcc -o BOption BOption.o
+kevin@kevin-VirtualBox:/media/sf_Compiler/CodeGenerator/AssemblyFiles$ ./BOption
+Enter an integer(less than 32,765): 3
+Enter an integer(less than 32,765): 2
+Ans = 00002
+Enter an integer(less than 32,765): 0
+Ans = 00001
+Enter an integer(less than 32,765): 4
+Ans = 00024
+Enter an integer(less than 32,765): 6
+Ans = 00720
+
+
+kevin@kevin-VirtualBox:/media/sf_Compiler/CodeGenerator/AssemblyFiles$ nasm -f elf ConstDemo.asm
+kevin@kevin-VirtualBox:/media/sf_Compiler/CodeGenerator/AssemblyFiles$ gcc -o ConstDemo ConstDemo.o
+kevin@kevin-VirtualBox:/media/sf_Compiler/CodeGenerator/AssemblyFiles$ ./ConstDemo
+Ans = 01500
+Ans = 00109
+
+

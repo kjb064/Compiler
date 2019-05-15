@@ -1,0 +1,19 @@
+CLASS Simple {
+    VAR X, Y, Z, var, var2;
+    X = 5;
+    Y = 10;
+    Z = 15;
+
+    var2 = 10;
+
+    IF ODD Y THEN {
+        var = 1;
+        WRITE var;
+    }    
+
+    IF ODD 11 THEN {
+        var = 2;
+        WRITE var;
+    }
+
+}

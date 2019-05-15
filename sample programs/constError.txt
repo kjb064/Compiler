@@ -1,0 +1,6 @@
+CLASS ConstError {
+    CONST A = 4;
+    
+    /* Attempt at CONST reassignment */
+    A = 1;
+}

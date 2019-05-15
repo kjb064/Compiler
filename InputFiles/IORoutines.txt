@@ -1,0 +1,71 @@
+;PrintString     PROC
+PrintString:
+	push    ax              ;Save registers;
+	push    dx
+; subpgm:
+	; prompt user	
+	mov eax, 4		;Linux print device register conventions
+	mov ebx, 1		; print default output device
+	mov ecx, userMsg	; pointer to string
+	mov edx, lenUserMsg	
+	int	80h		; interrupt 80 hex, call kernel
+	pop     dx              ;Restore registers.
+	pop     ax
+	ret
+;PrintString     ENDP
+
+;GetAnInteger    PROC
+
+GetAnInteger:	;Get an integer as a string
+	;get response
+	mov eax,3	;read
+	mov ebx,2	;device
+	mov ecx,num	;buffer address
+	mov edx,6	;max characters
+	int 0x80
+
+ConvertStringToInteger:
+	mov ax,0	;hold integer
+	mov [ReadInt],ax ;initialize 16 bit number to zero
+	mov ecx,num	;pt - 1st or next digit of number as a string 
+				;terminated by <lf>.
+	mov bx,0	
+	mov bl, byte [ecx] ;contains first or next digit
+Next:	sub bl,'0'	;convert character to number
+	mov ax,[ReadInt]
+	mov dx,10
+	mul dx		;eax = eax * 10
+	add ax,bx
+	mov [ReadInt], ax
+
+	mov bx,0
+	add ecx,1 	;pt = pt + 1
+	mov bl, byte[ecx]
+
+	cmp bl,0xA	;is it a <lf>
+	jne Next	; get next digit   
+	ret
+;	ENDP GetAnInteger
+
+;ConvertIntegerToString PROC
+
+ConvertIntegerToString:
+	mov ebx, ResultValue + 4   ;Store the integer as a
+				   ; five digit char string at Result for printing
+
+ConvertLoop:
+	sub dx,dx  ; repeatedly divide dx:ax by 10
+		   ; to obtain last digit of number
+	mov cx,10  ; as the remainder in the DX
+		   ; register.  Quotient in AX.
+	div cx
+	add dl,'0' ; Add '0' to dl to 
+		   ;convert from binary to character.
+	mov [ebx], dl
+	dec ebx
+	cmp ebx,ResultValue
+	jge ConvertLoop
+
+	ret
+
+;ConvertIntegerToString  ENDP

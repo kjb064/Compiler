@@ -1,0 +1,26 @@
+CLASS BOptionPgm5 {
+    /* Compute N! using nested while loops. */
+    VAR N, M, fact, count, sum;
+    READ N;
+    READ M;
+
+    IF N == 0 THEN fact = 1;
+    IF N > 0 THEN {
+        fact = 0;
+        sum = N;
+    }
+
+    WHILE N > 1 DO {
+        
+	count = 0;
+        WHILE count < M DO {
+            count += 1;
+            fact += sum;             
+        }
+        sum = fact;
+        N -= 1;
+        M -= 1;
+    }
+
+    WRITE fact;
+}

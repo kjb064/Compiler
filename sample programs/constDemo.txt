@@ -1,0 +1,14 @@
+CLASS ConstDemo {
+
+    CONST A = 4, B = 5, C = 100;
+    VAR D;
+  
+    D = 3;
+
+    IF ODD B THEN D = 1500;
+
+    WRITE D;
+
+    D = A + B + C;
+    WRITE D;    
+}

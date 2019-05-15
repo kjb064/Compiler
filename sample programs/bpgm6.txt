@@ -1,0 +1,16 @@
+CLASS BOptionPgm6 {
+    /* Compute N! using a function. */
+    VAR N, fact;
+
+    PROCEDURE factorial() {
+        WHILE N > 1 DO {
+            fact = fact * N;
+            N = N - 1;
+    	}
+    }
+
+    fact = 1;
+    READ N;
+    CALL factorial();
+    WRITE fact;
+}

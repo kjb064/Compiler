@@ -1,0 +1,57 @@
+CLASS COption {
+    
+    VAR ans, a, Bob, Jane, b, c, N, fact;
+    
+    /* 1. Get input, compute the result of the equation below. */
+    READ a;
+    READ b;
+    READ c;
+    READ Bob;
+    READ Jane;
+    
+    ans = a * ((Bob + Jane - 10) / 2 * 4) / (b + c);
+    
+    WRITE ans; 
+    
+    /* 2. Read two integers from the terminal and print the largest value. */
+    READ a;
+    READ b;
+    
+    IF a > b THEN WRITE a;
+    IF b > a THEN WRITE b;
+    
+    /* 3. Get three integers as input, print the largest (nested IF). */
+    READ a;
+    READ b;
+    READ c;
+    
+    IF a > b THEN {
+        IF a > c THEN {
+            WRITE a;
+        }
+    }
+    
+    IF b > a THEN {
+        IF b > c THEN {
+            WRITE b;
+        }
+    }
+    
+    IF c > a THEN {
+        IF c > b THEN {
+            WRITE c;
+        }
+    }
+
+    /* 4. Compute N! using a while loop. */
+        
+    fact = 1;
+    READ N;
+    
+    WHILE N > 1 DO {
+        fact = fact * N;
+        N = N - 1;
+    }
+    
+    WRITE fact;
+}

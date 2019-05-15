@@ -1,0 +1,16 @@
+CLASS ProcError {
+    VAR X, Y;
+    CONST Z = 4;
+    
+    /* Left out name of procedure */
+    PROCEDURE () {
+        X = Z + Z;
+        Y = X - 2;
+    }
+
+    /* Left out procedure to call */
+    CALL ;
+
+    WRITE X;
+    WRITE Y;
+}
